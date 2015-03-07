@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/trendbuilding-dev'
+    uri: 'mongodb://trend:factory@localhost/building'
   },
 
   seedDB: true
