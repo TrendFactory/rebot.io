@@ -3,7 +3,7 @@
 /**
  * Removes server error when user updates input
  */
-angular.module('trendBuildingApp')
+angular.module('buildingApp')
   .directive('mongooseError', function () {
     return {
       restrict: 'A',

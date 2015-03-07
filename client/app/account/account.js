@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('trendBuildingApp')
+angular.module('buildingApp')
   .config(function ($stateProvider) {
     $stateProvider
       .state('login', {

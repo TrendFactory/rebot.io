@@ -1,12 +1,13 @@
 'use strict';
 
-angular.module('trendBuildingApp')
+angular.module('buildingApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
     }];
 
+    $scope.brandName = 'Building';
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;

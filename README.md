@@ -1,4 +1,4 @@
-# Trend Buildin
+# Trend Building
 
 
 ```
