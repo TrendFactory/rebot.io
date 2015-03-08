@@ -1,4 +1,3 @@
-// Generated on 2015-03-04 using generator-angular-fullstack 2.0.13
 'use strict';
 
 module.exports = function (grunt) {
@@ -16,8 +15,7 @@ module.exports = function (grunt) {
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn',
     protractor: 'grunt-protractor-runner',
-    injector: 'grunt-asset-injector',
-    buildcontrol: 'grunt-build-control'
+    injector: 'grunt-asset-injector'
   });
 
   // Time how long tasks take. Can help when optimizing build times
@@ -27,7 +25,6 @@ module.exports = function (grunt) {
   grunt.initConfig({
 
     // Project settings
-    pkg: grunt.file.readJSON('package.json'),
     yeoman: {
       // configurable paths
       client: require('./bower.json').appPath || 'client',
@@ -35,7 +32,7 @@ module.exports = function (grunt) {
     },
     express: {
       options: {
-        port: process.env.PORT || 3000
+        port: process.env.PORT || 9000
       },
       dev: {
         options: {
@@ -128,16 +125,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'server/.jshintrc'
         },
-        src: [
-          'server/**/*.js',
-          '!server/**/*.spec.js'
-        ]
-      },
-      serverTest: {
-        options: {
-          jshintrc: 'server/.jshintrc-spec'
-        },
-        src: ['server/**/*.spec.js']
+        src: [ 'server/{,*/}*.js']
       },
       all: [
         '<%= yeoman.client %>/{app,components}/**/*.js',
@@ -200,7 +188,7 @@ module.exports = function (grunt) {
         options: {
           nodeArgs: ['--debug-brk'],
           env: {
-            PORT: process.env.PORT || 3000
+            PORT: process.env.PORT || 9000
           },
           callback: function (nodemon) {
             nodemon.on('log', function (event) {
@@ -219,7 +207,7 @@ module.exports = function (grunt) {
     },
 
     // Automatically inject Bower components into the app
-    wiredep: {
+    bowerInstall: {
       target: {
         src: '<%= yeoman.client %>/index.html',
         ignorePath: '<%= yeoman.client %>/',
@@ -337,7 +325,7 @@ module.exports = function (grunt) {
     // Replace Google CDN references
     cdnify: {
       dist: {
-        html: ['<%= yeoman.dist %>/public/*.html']
+        html: ['<%= yeoman.dist %>/*.html']
       }
     },
 
@@ -376,28 +364,6 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.client %>',
         dest: '.tmp/',
         src: ['{app,components}/**/*.css']
-      }
-    },
-
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        connectCommits: false,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      heroku: {
-        options: {
-          remote: 'heroku',
-          branch: 'master'
-        }
-      },
-      openshift: {
-        options: {
-          remote: 'openshift',
-          branch: 'master'
-        }
       }
     },
 
@@ -571,7 +537,7 @@ module.exports = function (grunt) {
         'injector:less', 
         'concurrent:server',
         'injector',
-        'wiredep',
+        'bowerInstall',
         'autoprefixer',
         'concurrent:debug'
       ]);
@@ -583,7 +549,7 @@ module.exports = function (grunt) {
       'injector:less', 
       'concurrent:server',
       'injector',
-      'wiredep',
+      'bowerInstall',
       'autoprefixer',
       'express:dev',
       'wait',
@@ -626,7 +592,7 @@ module.exports = function (grunt) {
         'injector:less', 
         'concurrent:test',
         'injector',
-        'wiredep',
+        'bowerInstall',
         'autoprefixer',
         'express:dev',
         'protractor'
@@ -644,7 +610,7 @@ module.exports = function (grunt) {
     'injector:less', 
     'concurrent:dist',
     'injector',
-    'wiredep',
+    'bowerInstall',
     'useminPrepare',
     'autoprefixer',
     'ngtemplates',

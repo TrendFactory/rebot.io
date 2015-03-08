@@ -16,7 +16,10 @@
       "bootstrap": true,
       "uibootstrap": true,
       "mongoose": true,
-      "auth": true
+      "auth": true,
+      "oauth": true,
+      "googleAuth": true,
+      "facebookAuth": true
     }
   },
   "generator-ng-component": {
@@ -25,7 +28,6 @@
     "filterDirectory": "client/app/",
     "serviceDirectory": "client/app/",
     "basePath": "client",
-    "moduleName": "",
     "filters": [
       "uirouter"
     ],
@@ -33,15 +35,6 @@
       "js",
       "html",
       "less"
-    ],
-    "directiveSimpleTemplates": "",
-    "directiveComplexTemplates": "",
-    "filterTemplates": "",
-    "serviceTemplates": "",
-    "factoryTemplates": "",
-    "controllerTemplates": "",
-    "decoratorTemplates": "",
-    "providerTemplates": "",
-    "routeTemplates": ""
+    ]
   }
 }

@@ -7,7 +7,6 @@ angular.module('buildingApp')
       'link': '/'
     }];
 
-    $scope.brandName = 'Building';
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;
     $scope.isAdmin = Auth.isAdmin;
