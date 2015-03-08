@@ -364,6 +364,10 @@ module.exports = function (grunt) {
         cwd: '<%= yeoman.client %>',
         dest: '.tmp/',
         src: ['{app,components}/**/*.css']
+      },
+      config: {
+	dest: './server/config/local.env.js',
+	src: './server/config/local.env.sample.js'
       }
     },
 
@@ -628,5 +632,9 @@ module.exports = function (grunt) {
     'newer:jshint',
     'test',
     'build'
+  ]);
+
+  grunt.registerTask('dev', [
+    'copy:config'
   ]);
 };
