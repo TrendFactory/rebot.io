@@ -6,7 +6,7 @@
 // This file should not be tracked by git.
 
 module.exports = {
-  DOMAIN: 'http://localhost:9000',
+  DOMAIN: 'http://localhost:3000',
   SESSION_SECRET: "building-secret",
 
   FACEBOOK_ID: 'app-id',
@@ -20,6 +20,7 @@ module.exports = {
 
   LINKEDIN_ID: 'app-id',
   LINKEDIN_SECRET: 'secret',
+  LINKEDIN_STATE: 'state',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''

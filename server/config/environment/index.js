@@ -51,6 +51,19 @@ var all = {
     clientID:     process.env.GOOGLE_ID || 'id',
     clientSecret: process.env.GOOGLE_SECRET || 'secret',
     callbackURL:  process.env.DOMAIN + '/auth/google/callback'
+  },
+
+  github: {
+    clientID:     process.env.GITHUB_ID || 'id',
+    clientSecret: process.env.GITHUB_SECRET || 'secret',
+    callbackURL:  process.env.DOMAIN + '/auth/github/callback'
+  },
+
+  linkedin: {
+    clientID:     process.env.LINKEDIN_ID || 'id',
+    clientSecret: process.env.LINKEDIN_SECRET || 'secret',
+    callbackURL:  process.env.DOMAIN + '/auth/linkedin/callback',
+    state:        process.env.LINKEDIN_STATE || 'state'
   }
 };
 
