@@ -366,8 +366,13 @@ module.exports = function (grunt) {
         src: ['{app,components}/**/*.css']
       },
       config: {
-	dest: './server/config/local.env.js',
-	src: './server/config/local.env.sample.js'
+	files: [{
+	  dest: './server/config/local.env.js',
+	  src: './server/config/local.env.sample.js'
+	}, {
+	  dest: './server/config/environment/development.js',
+	  src: './server/config/environment/development.sample.js'
+	}]
       }
     },
 
