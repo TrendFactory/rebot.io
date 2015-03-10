@@ -11,14 +11,9 @@ require('./local/passport').setup(User, config);
 require('./github/passport').setup(User, config);
 require('./linkedin/passport').setup(User, config);
 
-require('./facebook/passport').setup(User, config);
-require('./google/passport').setup(User, config);
-
 var router = express.Router();
 
 router.use('/local', require('./local'));
-router.use('/facebook', require('./facebook'));
-router.use('/google', require('./google'));
 router.use('/github', require('./github'));
 router.use('/linkedin', require('./linkedin'));
 
