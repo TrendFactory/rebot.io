@@ -4,6 +4,6 @@
 
 ```
 $ npm install && bower install
-$ grunt dev # only once to copy local.env.js
+$ grunt init # execute only once to copy config files 
 $ grunt serve
 ```

@@ -639,7 +639,7 @@ module.exports = function (grunt) {
     'build'
   ]);
 
-  grunt.registerTask('dev', [
+  grunt.registerTask('init', [
     'copy:config'
   ]);
 };
