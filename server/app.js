@@ -23,13 +23,6 @@ var server = require('http').createServer(app);
 require('./config/express')(app);
 require('./routes')(app);
 
-
-// Handle exceptions
-process.on('uncaughtException', function (err) {
-  console.error((new Date).toUTCString() + ' uncaughtException:', err.message);
-  console.error(err.stack);
-});
-
 // Start server
 server.listen(config.port, config.ip, function () {
   console.log('Express server listening on %d, in %s mode', config.port, app.get('env'));
