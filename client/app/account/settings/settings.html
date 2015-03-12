@@ -1,16 +1,28 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <div class="row">
-    <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3"></div>
-    <div class="col-sm-6 col-xs-6 col-md-6 col-lg-6">
-      <div class="row margin-top-50" align="center"">
-	<a class="btn-lg btn-primary" href="#">
-	  <i class="fa fa-linkedin margin-right-10"></i> Linkedin
-	</a>
-	<p>{{}}</p>
-      </div>
+    <div class="row">
+	<div class="col-sm-5 col-xs-5 col-md-5 col-lg-5">
+	    <h3 class="margin-bottom-30">Connected Accounts</h3>
+	    <div class="row margin-top-10">
+		<a class="btn-lg btn-success" href="#">
+		    <i class="fa fa-github margin-right-10"></i> github 
+		</a>
+		<a href="" class="margin-left-10">
+		  {{ connected('github') }}
+		</a>
+	    </div>
+	    
+	    <div class="row margin-top-30">
+		<a class="btn-lg btn-primary" href="#">
+		    <i class="fa fa-linkedin margin-right-10"></i> linkedin 
+		</a>
+		<a class="margin-left-10" href="" ng-click="connectOAuth('linkedin')">
+		  {{ connected('linkedin') }}
+		</a>
+	    </div>
+	</div>
+	<div class="col-sm-7 col-xs-7 col-md-7 col-lg-7">
+	</div>
     </div>
-    <div class="col-sm-3 col-xs-3 col-md-3 col-lg-3"></div>
-  </div>
 </div>

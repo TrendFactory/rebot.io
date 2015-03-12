@@ -99,3 +99,10 @@ exports.me = function(req, res, next) {
 exports.authCallback = function(req, res, next) {
   res.redirect('/');
 };
+
+exports.connectProvider = function(req, res, next) {
+  // backup req.user due to linkedin passport auth
+  req.user_back = req.user;
+  req._provider = req.params.provider;
+  next();
+};

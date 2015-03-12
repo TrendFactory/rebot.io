@@ -18,5 +18,27 @@ angular.module('buildingApp')
           id:'me'
         }
       }
-	  });
+    });
+  });
+
+angular.module('buildingApp')
+  .factory('Setting', function($resource) {
+    return $resource('/api/users/:id/setting/:provider', {
+      id: '@_id',
+      provider: '@provider'
+    }, {
+      connect: {
+	method: 'POST',
+	params: {
+	  command: 'connect'
+	}
+      },
+
+      disconnect: {
+	method: 'POST',
+	params: {
+	  command: 'disconnect'
+	}
+      } 
+    });
   });
