@@ -11,15 +11,15 @@ var router = express.Router();
 router
   .get('/', passport.authenticate('linkedin', {
     state: config.linkedin.state,
-    failureRedirect: '/settings',
+    failureRedirect: '/setting',
     session: false
   }))
 
   .get('/callback', passport.authenticate('linkedin', {
-    failureRedirect: '/settings',
+    failureRedirect: '/setting',
     session: false
   }), function(req, res) {
-    res.redirect('/settings');
+    res.redirect('/setting');
   });
 
 module.exports = router;

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('buildingApp')
-  .controller('SettingsCtrl', function ($scope, User, Auth, Setting, $window) {
+  .controller('SettingCtrl', function ($scope, User, Auth, Setting, $window) {
     $scope.errors = {};
     $scope.user = {};
     $scope.providers = {'github': true, 'linkedin': true};

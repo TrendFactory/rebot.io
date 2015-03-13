@@ -9,13 +9,6 @@ angular.module('buildingApp')
 
     return {
 
-      /**
-       * Authenticate user and save token
-       *
-       * @param  {Object}   user     - login info
-       * @param  {Function} callback - optional
-       * @return {Promise}
-       */
       login: function(user, callback) {
         var cb = callback || angular.noop;
         var deferred = $q.defer();
@@ -92,11 +85,6 @@ angular.module('buildingApp')
         }).$promise;
       },
 
-      /**
-       * Gets all available info on authenticated user
-       *
-       * @return {Object} user
-       */
       getCurrentUser: function() {
         return currentUser;
       },
@@ -117,10 +105,6 @@ angular.module('buildingApp')
         } else {
           cb(false);
         }
-      },
-
-      isAdmin: function() {
-        return currentUser.role === 'admin';
       },
 
       getToken: function() {
