@@ -1,22 +1,18 @@
 'use strict';
 
 angular.module('buildingApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
+  .controller('MainCtrl', function ($scope, $state, Auth) {
 
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
+    Auth.isLoggedInAsync(function(loggedin) {
+      if (loggedin) $state.go('main.loggedin');
+      else $state.go('main.public');
     });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
+  })
+  .controller('PublicCtrl', function($scope) {
+    $scope.name = 'Public';
+  })
+  
+  .controller('LoggedinCtrl', function($scope) {
+    $scope.name = 'Loggedin';
   });
+

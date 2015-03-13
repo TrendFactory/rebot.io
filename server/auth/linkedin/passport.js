@@ -18,7 +18,6 @@ exports.setup = function (User, config) {
       if (!user) return done(err);
 
       // remove unnecessary fields
-      console.log(profile);
       user.linkedin = profile._json;
       user.linkedin.threePastPositions = undefined;
       user.linkedin.threeCurrentPositions = undefined;

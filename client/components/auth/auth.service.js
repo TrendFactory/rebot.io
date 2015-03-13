@@ -101,18 +101,10 @@ angular.module('buildingApp')
         return currentUser;
       },
 
-      /**
-       * Check if a user is logged in
-       *
-       * @return {Boolean}
-       */
       isLoggedIn: function() {
         return currentUser.hasOwnProperty('role');
       },
 
-      /**
-       * Waits for currentUser to resolve before checking if user is logged in
-       */
       isLoggedInAsync: function(cb) {
         if(currentUser.hasOwnProperty('$promise')) {
           currentUser.$promise.then(function() {
@@ -127,18 +119,10 @@ angular.module('buildingApp')
         }
       },
 
-      /**
-       * Check if a user is an admin
-       *
-       * @return {Boolean}
-       */
       isAdmin: function() {
         return currentUser.role === 'admin';
       },
 
-      /**
-       * Get auth token
-       */
       getToken: function() {
         return $cookieStore.get('token');
       }
