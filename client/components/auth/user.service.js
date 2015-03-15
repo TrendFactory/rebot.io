@@ -22,8 +22,8 @@ angular.module('buildingApp')
   });
 
 angular.module('buildingApp')
-  .factory('Setting', function($resource) {
-    return $resource('/api/users/:id/setting/:provider', {
+  .factory('Profile', function($resource) {
+    return $resource('/api/users/:id/profile/:provider', {
       id: '@_id',
       provider: '@provider'
     }, {

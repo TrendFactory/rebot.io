@@ -8,10 +8,10 @@ angular.module('buildingApp')
         templateUrl: 'app/account/login/login.html',
         controller: 'LoginCtrl'
       })
-      .state('setting', {
-        url: '/setting',
-        templateUrl: 'app/account/setting/setting.html',
-        controller: 'SettingCtrl',
+      .state('profile', {
+        url: '/profile',
+        templateUrl: 'app/account/profile/profile.html',
+        controller: 'ProfileCtrl',
         authenticate: true
       });
   });
