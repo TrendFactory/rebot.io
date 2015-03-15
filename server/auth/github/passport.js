@@ -8,19 +8,21 @@ exports.setup = function (User, config) {
       callbackURL: config.github.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
+      console.log(profile);
       User.findOne({
-        'github.id': profile.id
+        'githubUniqId': profile.id
       },
       function(err, user) {
         if (err) {
           return done(err);
         }
         if (!user) {
+
           user = new User({
-            name: profile.displayName,
-            email: profile.emails[0].value,
+	    githubUniqId: profile.id, 
+            name: profile.username,
+            email: profile.emails[0].value, // email can be 'undefined'
             role: 'user',
-            username: profile.username,
             provider: 'github',
             github: profile._json
           });

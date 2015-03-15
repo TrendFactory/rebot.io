@@ -6,12 +6,10 @@ var crypto = require('crypto');
 var authTypes = ['github', 'linkedin'];
 
 var UserSchema = new Schema({
-  name: String,
+  githubUniqId: String, // github row id
   email: { type: String, lowercase: true },
-  role: {
-    type: String,
-    default: 'user'
-  },
+  role: { type: String, default: 'user' },
+  name: String,
   hashedPassword: String,
   provider: String,
   salt: String,
@@ -57,13 +55,13 @@ UserSchema
  * Validations
  */
 
-// Validate empty email
+// Validate empty id 
 UserSchema
-  .path('email')
-  .validate(function(email) {
+  .path('githubUniqId')
+  .validate(function(id) {
     if (authTypes.indexOf(this.provider) !== -1) return true;
-    return email.length;
-  }, 'Email cannot be blank');
+    return id.length;
+  }, 'Github raw id cannot be blank');
 
 // Validate empty password
 UserSchema
@@ -73,12 +71,12 @@ UserSchema
     return hashedPassword.length;
   }, 'Password cannot be blank');
 
-// Validate email is not taken
+// Validate id is not taken
 UserSchema
-  .path('email')
+  .path('githubUniqId')
   .validate(function(value, respond) {
     var self = this;
-    this.constructor.findOne({email: value}, function(err, user) {
+    this.constructor.findOne({githubUniqId: value}, function(err, user) {
       if(err) throw err;
       if(user) {
         if(self.id === user.id) return respond(true);
@@ -86,7 +84,7 @@ UserSchema
       }
       respond(true);
     });
-}, 'The specified email address is already in use.');
+}, 'The specified id is already in use.');
 
 var validatePresenceOf = function(value) {
   return value && value.length;
