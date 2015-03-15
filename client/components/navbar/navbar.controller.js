@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('buildingApp')
-  .controller('NavbarCtrl', function ($scope, $location, Auth) {
+  .controller('NavbarCtrl', function ($state, $scope, $location, Auth) {
     $scope.menu = [{
       'title': 'Home',
       'link': '/'
@@ -25,7 +25,7 @@ angular.module('buildingApp')
 
     $scope.logout = function() {
       Auth.logout();
-      $location.path('/');
+      $state.go('main.public');
     };
 
     $scope.isActive = function(route) {
