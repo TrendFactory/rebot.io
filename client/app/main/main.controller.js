@@ -10,9 +10,5 @@ angular.module('buildingApp')
   })
   .controller('PublicCtrl', function($scope) {
     $scope.name = 'Public';
-  })
-  
-  .controller('LoggedinCtrl', function($scope) {
-    $scope.name = 'Loggedin';
   });
 

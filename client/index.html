@@ -13,6 +13,7 @@
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(client) app/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,client}) app/app.css -->
@@ -44,8 +45,13 @@
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/lodash/dist/lodash.compat.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+
+    <!-- angular material -->
 
     <!-- build:js({.tmp,client}) app/app.js -->
     <script src="app/app.js"></script>
@@ -61,6 +67,7 @@
     <script src="app/job/job.js"></script>
     <script src="app/language/language.controller.js"></script>
     <script src="app/language/language.js"></script>
+    <script src="app/main/loggedin.controller.js"></script>
     <script src="app/main/main.controller.js"></script>
     <script src="app/main/main.js"></script>
     <script src="components/auth/auth.service.js"></script>
@@ -70,5 +77,16 @@
     <script src="components/navbar/navbar.directive.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="container">
+	<p>
+	  <a href="">@Choduck</a>
+	  <a href="">@1ambda</a>
+	</p>
+      </div>
+    </footer>
+    <!-- endfooter -->
   </body>
 </html>

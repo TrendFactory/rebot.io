@@ -8,7 +8,6 @@ exports.setup = function (User, config) {
       callbackURL: config.github.callbackURL
     },
     function(accessToken, refreshToken, profile, done) {
-      console.log(profile);
       User.findOne({
         'githubUniqId': profile.id
       },

@@ -1,22 +1,72 @@
-<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>'Allo, 'Allo!</h1>
-    <p class="lead">Kick-start your next web app with Angular Fullstack</p>
-    <img src="assets/images/yeoman.png" alt="I'm Yeoman">
-  </div>
-</header>
-
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <h1>{{ name }}</h1>
-    </div>
-  </div>
-</div>
+  <md-grid-list md-cols-sm="2" md-cols-gt-sm="6"
+		md-row-height-sm="3:2" md-row-height-gt-md="3:2"
+		md-gutter="10px" md-gutter-gt-sm="20px">
 
-<footer class="footer">
-  <div class="container">
-      <p><a href="https://twitter.com/tyhenkel">@tyhenkel</a> |
-         <a href="https://github.com/DaftMonk/generator-angular-fullstack/issues?state=open">Issues</a></p>
-  </div>
-</footer>
+    <md-grid-tile md-rowspan="2" md-colspan="2">
+      <md-card id="#language1" class="language1-card" layout="column" layout-fill>
+	<md-toolbar class="md-primary">
+	  <div class="md-toolbar-tools"> <h3>Active Language 1</h3> </div>
+	</md-toolbar>
+      </md-card>
+    </md-grid-tile>
+
+    <md-grid-tile md-rowspan="2" md-colspan="2">
+      <md-card id="#language-trend" class="language-trend-card" layout="column" layout-fill>
+	<md-toolbar>
+	  <div class="md-toolbar-tools"> <h3>Fans</h3> </div>
+	</md-toolbar>
+      </md-card>
+    </md-grid-tile>
+    
+    <md-grid-tile md-rowspan="6" md-colspan="2">
+	<md-card id="#leader" class="leader-card" layout="column" layout-wrap>
+	    <md-toolbar class="md-accent">
+	      <div class="md-toolbar-tools">
+		<h3>Trend Leaders</h3>
+	      </div>
+	    </md-toolbar>
+	    <md-content>
+	      <md-list>
+		<md-item ng-repeat="l in leaders">
+		  <md-item-content>
+		    <div class="md-tile-left">
+		      <img alt="" src="{{ l.avatarUrl }}" class="avatar"/>
+		    </div>
+		    <div class="mg-tile-content">
+		      <h3>{{ l.name }}</h3>
+		      <h4>Scala</h4>
+		    </div>
+		  </md-item-content>
+		  <md-divider inset></md-divider>
+		</md-item>
+	      </md-list>
+	    </md-content>
+	</md-card>
+    </md-grid-tile>
+    
+    <md-grid-tile md-rowspan="2" md-colspan="2">
+      <md-card id="#language2" class="language2-card" layout="column" layout-fill>
+	<md-toolbar class="md-primary">
+	  <div class="md-toolbar-tools"> <h3>Active Language 2</h3> </div>
+	</md-toolbar>
+      </md-card>
+    </md-grid-tile>
+
+    <md-grid-tile md-rowspan="4" md-colspan="2">
+      <md-card id="#recommend" class="recommend-card" layout="column" layout-fill>
+	<md-toolbar class="md-warn">
+	  <div class="md-toolbar-tools"> <h3>Questions</h3> </div>
+	</md-toolbar>
+      </md-card>
+    </md-grid-tile>
+
+    <md-grid-tile md-rowspan="2" md-colspan="2">
+      <md-card id="#course" class="course-card" layout="column" layout-fill>
+	<md-toolbar class="md-primary">
+	  <div class="md-toolbar-tools"> <h3>Active Course</h3> </div>
+	</md-toolbar>
+      </md-card>
+    </md-grid-tile>
+  </md-grid-list>
+</div>
