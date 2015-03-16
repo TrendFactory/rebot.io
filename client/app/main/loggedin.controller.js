@@ -9,6 +9,9 @@ angular.module('buildingApp')
       {ranking: 4, avatarUrl: "https://avatars.githubusercontent.com/u/4968473?v=3", name: "4ambda"},
       {ranking: 5, avatarUrl: "https://avatars.githubusercontent.com/u/4968473?v=3", name: "5ambda"}
     ];
-    
-    $scope.name = 'Loggedin';
+
+    $scope.languages = [
+      { language: 'Go', users: 485, increase: 13 },
+      { language: 'Python', users: 475, increase: 11 },
+    ];
   });

@@ -3,19 +3,19 @@
 angular.module('buildingApp')
   .controller('NavbarCtrl', function ($state, $scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'Home',
+      'title': 'HOME',
       'link': '/'
     }, {
-      'title': 'Language',
+      'title': 'LANGUAGE',
       'link': '/language'
     }, {
-      'title': 'Course',
+      'title': 'COURSE',
       'link': '/course'
     }, {
-      'title': 'Contrib',
+      'title': 'CONTRIB',
       'link': '/contrib'
     }, {
-      'title': 'Job',
+      'title': 'JOB',
       'link': '/job'
     }];
 
