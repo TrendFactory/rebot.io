@@ -8,12 +8,17 @@ angular.module('buildingApp', [
   'ui.bootstrap',
   'ngMaterial'
 ])
-  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
+  .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $urlRouterProvider
       .otherwise('/');
-
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
+
+    // themeing
+    $mdThemingProvider.theme('profileTheme')
+      .primaryPalette('green')
+      .warnPalette('light-blue')
+      .accentPalette('grey');
   })
 
   .factory('authInterceptor', function ($rootScope, $q, $cookieStore, $location) {

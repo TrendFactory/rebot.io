@@ -1,28 +1,18 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-<div class="container">
-    <div class="row">
-	<div class="col-sm-5 col-xs-5 col-md-5 col-lg-5">
-	    <h3 class="margin-bottom-30">Connected Accounts</h3>
-	    <div class="row margin-top-10">
-		<a class="btn-lg btn-success" href="#">
-		    <i class="fa fa-github margin-right-10"></i> github 
-		</a>
-		<a href="" class="margin-left-10">
-		  {{ connected('github') }}
-		</a>
-	    </div>
-	    
-	    <div class="row margin-top-30">
-		<a class="btn-lg btn-primary" href="#">
-		    <i class="fa fa-linkedin margin-right-10"></i> linkedin 
-		</a>
-		<a class="margin-left-10" href="" ng-click="connectOAuth('linkedin')">
-		  {{ connected('linkedin') }}
-		</a>
-	    </div>
-	</div>
-	<div class="col-sm-7 col-xs-7 col-md-7 col-lg-7">
-	</div>
-    </div>
+
+<!-- side bar -->
+<div layout="column"></div>
+<div class="sidebar" layout="column">
+  <section layout="row" flex>
+    
+    <!-- sidebar -->
+    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+      <rebot-profile-sidebar flex />
+    </md-sidenav>
+    
+    <md-content flex class="md-padding md-whiteframe-z1">
+      <rebot-profile-content flex />
+    </md-content>
+  </section>
 </div>

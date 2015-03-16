@@ -25,30 +25,29 @@
       </md-card>
     </md-grid-tile>
     
-    <md-grid-tile md-rowspan="6" md-colspan="2">
-	<md-card id="#leader" class="leader-card" layout="column" layout-wrap>
-	    <md-toolbar class="md-accent">
-	      <div class="md-toolbar-tools">
-		<h3>Trend Leaders</h3>
-	      </div>
-	    </md-toolbar>
-	    <md-content>
-	      <md-list>
-		<md-item ng-repeat="l in leaders">
-		  <md-item-content>
-		    <div class="md-tile-left">
-		      <img alt="" src="{{ l.avatarUrl }}" class="avatar"/>
-		    </div>
-		    <div class="mg-tile-content">
-		      <h3>{{ l.name }}</h3>
-		      <h4>Scala</h4>
-		    </div>
-		  </md-item-content>
-		  <md-divider inset></md-divider>
-		</md-item>
-	      </md-list>
-	    </md-content>
-	</md-card>
+    <md-grid-tile md-rowspan="6" md-colspan="2" layout="column" layout-wrap >
+      <md-content id="#leader" class="leader-card md-whiteframe-z1" flex>
+	<md-toolbar class="md-accent">
+	  <div class="md-toolbar-tools">
+	    <h3>Trend Leaders</h3>
+	  </div>
+	</md-toolbar>
+	<md-content flex>
+	  <md-list>
+	    <md-item ng-repeat="l in leaders">
+	      <md-item-content>
+		<div class="md-tile-left">
+		  <img alt="" src="{{ l.avatarUrl }}" class="avatar"/>
+		</div>
+		<div class="mg-tile-content">
+		  <h3>{{ l.name }}</h3>
+		  <h4>Scala</h4>
+		</div>
+	      </md-item-content>
+	      <md-divider inset></md-divider>
+	    </md-item>
+	  </md-list>
+	</md-content>
     </md-grid-tile>
     
     <md-grid-tile md-rowspan="2" md-colspan="2">
