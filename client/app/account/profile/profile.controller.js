@@ -31,31 +31,12 @@ angular.module('buildingApp')
       }
     });
 
-    $scope.getLinkedinBtnColor = function(p) {
-      return $scope.providers[p] ? 'md-warn' : 'md-default'; 
-    };
-    
-    $scope.getTooltipMsg= function (p) {
-      return $scope.providers[p] ? 'connected' : 'disconnected';
-    };
 
-    $scope.connectProvider = function(p) {
-      if ($scope.providers[p]) // connected
-	$window.open($scope.profile[p], "_blank");
-      else
-	$window.location.href = '/auth/' + p;
-    };
+    // github tab
 
-    
-    $scope.closeSidenav = function() {
-      $mdSidenav('left').close().then(function() {
-	
-      });
-    };
+    // end github tab
 
-    $scope.toggleSidenav = function() {
-      $mdSidenav('left').toggle().then(function() {
-	
-      });
-    };
+    // course tab
+
+    // end course tab
   });

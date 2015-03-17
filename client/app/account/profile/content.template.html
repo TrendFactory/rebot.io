@@ -1,5 +1,27 @@
-<div layout="column" layout-fill layout-align="top center">
-  <md-button class="md-accent md-raised sidebar-toggle" ng-click="toggleSidenav()" hide-gt-sm>toggle sidebar</md-button>
-
-  
+<div class="sidebar-toggle" layout="column" layout-fill layout-align="top center">
+  <md-button class="md-accent md-raised" ng-click="toggleSidenav()" hide-gt-sm>toggle sidebar</md-button>
 </div>
+
+<div layout="column" layout-fill>
+  <md-tabs class="profile-tab md-whiteframe-z1" md-selected="selectedTabIndex" flex>
+    <md-tab id="github-tab" aria-control="github-tab-content">
+      GITHUB
+    </md-tab>
+    <md-tab id="course-tab" aria-control="course-tab-content">
+      COURSE
+    </md-tab>
+  </md-tabs>
+  <ng-switch on="selectedTabIndex" class="tabpanel-container" >
+    <div role="tabpanel" id="github-tab-content" aria-labelledby="github-tab"
+	 ng-switch-when="0" md-swife-left="next()" md-swife-right="previous()">
+      <rebot-profile-github-tab />
+    </div>
+    <div role="tabpanel" id="course-tab-content" aria-labelledby="course-tab"
+	 ng-switch-when="1" md-swife-left="next()" md-swife-right="previous()">
+      <rebot-profile-course-tab />
+    </div>
+  </ng-switch>
+</div>
+
+<!-- <rebot-profile-github-tab />
+      <rebot-profile-course-tab /> -->
