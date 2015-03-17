@@ -1,65 +1,69 @@
-<div layout="row" layout-align="center center">
-  <img class="profile-sidebar-avatar" src="{{ profile.avatarUrl }}" />
-</div>
-
-<div layout="row" layout-align="center center">
-  <h2 class="profile-sidebar-name">{{ profile.name }}</h2>
-</div>
-
-<div layout="row" layout-align="center center">
-  <md-button class="provider md-accent md-raised" ng-click="connectProvider('github')">
-    <i class="fa fa-github"></i> github
-    <md-tooltip> {{ getTooltipMsg('github') }}</md-tooltip>
-  </md-button>
-  <div md-theme="profileTheme">
-    <md-button class="provider md-raised" ng-class="getLinkedinBtnColor('linkedin')" ng-click="connectProvider('linkedin')">
-      <i class="fa fa-linkedin"></i> linkedin
-      <md-tooltip> {{ getTooltipMsg('linkedin') }}</md-tooltip>
-    </md-button>
+<md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')" flex>
+  <div layout="row" layout-align="center center">
+    <img class="sidebar-avatar" src="{{ profile.avatarUrl }}" />
   </div>
-</div>
 
-<div layout="column" layout-fill>
-  <md-card class="profile-sidebar-content">
-    <md-list>
-      <md-item class="md-padding">
-	<md-item-content md-no-float layout="row" md-theme="profileTheme">
-	  <md-button class="md-fab md-accent" aria-label="Email">
-	    <md-tooltip>email</md-tooltip>
-            <md-icon md-svg-src="assets/images/profile/email.svg"></md-icon>
-	  </md-button>
-	  <md-content class=""> {{ profile.email }} </md-content>
-	</md-item-content>
-	<md-divider></md-divider>
-	<md-item-content md-no-float layout="row" md-theme="profileTheme">
-	  <md-button class="md-fab md-accent" aria-label="Company">
-	    <md-tooltip>company</md-tooltip>
-	    <md-icon md-svg-src="/assets/images/profile/company.svg"></md-icon>
-	  </md-button>
-	  <md-content class=""> {{ profile.company }} </md-content>
-	</md-item-content>
-	<md-divider></md-divider>
-	<md-item-content md-no-float layout="row" md-theme="profileTheme">
-	  <md-button class="md-fab md-accent" aria-label="Blog">
-	    <md-tooltip>blog</md-tooltip>
-	    <md-icon md-svg-src="/assets/images/profile/blog.svg"></md-icon>
-	  </md-button>
-	  <md-content class="">
-	    <a href="{{ profile.blog }}" target="_blank">{{ profile.blog }}</a>
-	  </md-content>
-	</md-item-content>
-	<md-divider></md-divider>
-	<md-item-content md-no-float layout="row" md-theme="profileTheme">
-	  <md-button class="md-fab md-accent" aria-label="Location">
-	    <md-tooltip>location</md-tooltip>
-	    <md-icon md-svg-src="/assets/images/profile/location.svg"></md-icon>
-	  </md-button>
-	  <md-content class=""> {{ profile.location }} </md-content>
-	</md-item-content>
-	<md-divider></md-divider>
-      </md-item>
-    </md-list>
-  </md-card>
-</div>
+  <div layout="row" layout-align="center center">
+    <h2 class="sidebar-name">{{ profile.name }}</h2>
+  </div>
+
+  <div layout="row" layout-align="center center">
+    <md-button class="provider md-accent md-raised" ng-click="connectProvider('github')">
+      <i class="fa fa-github"></i> github
+      <md-tooltip> {{ getTooltipMsg('github') }}</md-tooltip>
+    </md-button>
+    <div md-theme="profileTheme">
+      <md-button class="provider md-raised" ng-class="getLinkedinBtnColor('linkedin')" ng-click="connectProvider('linkedin')">
+	<i class="fa fa-linkedin"></i> linkedin
+	<md-tooltip> {{ getTooltipMsg('linkedin') }}</md-tooltip>
+      </md-button>
+    </div>
+  </div>
+
+  <div layout="column" layout-fill>
+    <md-card class="profile-sidebar-content">
+      <md-list>
+	<md-item class="md-padding">
+	  <md-item-content md-no-float layout="row" md-theme="profileTheme">
+	    <md-button class="md-fab md-accent" aria-label="Email">
+	      <md-tooltip>email</md-tooltip>
+              <md-icon md-svg-src="assets/images/profile/email.svg"></md-icon>
+	    </md-button>
+	    <md-content class=""> {{ profile.email }} </md-content>
+	  </md-item-content>
+	  <md-divider></md-divider>
+	  <md-item-content md-no-float layout="row" md-theme="profileTheme">
+	    <md-button class="md-fab md-accent" aria-label="Company">
+	      <md-tooltip>company</md-tooltip>
+	      <md-icon md-svg-src="/assets/images/profile/company.svg"></md-icon>
+	    </md-button>
+	    <md-content class=""> {{ profile.company }} </md-content>
+	  </md-item-content>
+	  <md-divider></md-divider>
+	  <md-item-content md-no-float layout="row" md-theme="profileTheme">
+	    <md-button class="md-fab md-accent" aria-label="Blog">
+	      <md-tooltip>blog</md-tooltip>
+	      <md-icon md-svg-src="/assets/images/profile/blog.svg"></md-icon>
+	    </md-button>
+	    <md-content class="">
+	      <a href="{{ profile.blog }}" target="_blank">{{ profile.blog }}</a>
+	    </md-content>
+	  </md-item-content>
+	  <md-divider></md-divider>
+	  <md-item-content md-no-float layout="row" md-theme="profileTheme">
+	    <md-button class="md-fab md-accent" aria-label="Location">
+	      <md-tooltip>location</md-tooltip>
+	      <md-icon md-svg-src="/assets/images/profile/location.svg"></md-icon>
+	    </md-button>
+	    <md-content class=""> {{ profile.location }} </md-content>
+	  </md-item-content>
+	  <md-divider></md-divider>
+	</md-item>
+      </md-list>
+    </md-card>
+  </div>
 
 
+
+
+</md-sidenav>

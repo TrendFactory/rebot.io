@@ -38,7 +38,7 @@ angular.module('buildingApp')
   })
   .directive('rebotProfileContent', function() {
     return {
-      templateUrl: 'app/account/profile/content.template.html',
+      templateUrl: 'app/account/profile/tabs.template.html',
       link: function(scope, element, attrs) {
 	scope.selectedTabIndex = 0;
 	scope.maxTabCount = 2;
@@ -64,6 +64,13 @@ angular.module('buildingApp')
     return {
       templateUrl: 'app/account/profile/github-tab.template.html',
       link: function(scope, element, attrs) {
+	scope.userStat = {
+	  starred: 47,
+	  watched: 80,
+	  forked: 7,
+	  rankPoint: 450,
+	  rankIndex: 7
+	};
       }
     };
   }) ;

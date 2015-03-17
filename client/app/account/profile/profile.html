@@ -1,18 +1,7 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
-
-<!-- side bar -->
-<div layout="column"></div>
-<div class="sidebar" layout="column">
-  <section layout="row" flex>
-    
-    <!-- sidebar -->
-    <md-sidenav class="md-sidenav-left" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
-      <rebot-profile-sidebar flex />
-    </md-sidenav>
-    
-    <md-content flex class="md-whiteframe-z1 profile-content">
-      <rebot-profile-content flex />
-    </md-content>
-  </section>
+<div class="profile-container" layout="row" layout="column">
+  <!-- sidebar -->
+  <rebot-profile-sidebar></rebot-profile-sidebar>
+  <rebot-profile-content flex></rebot-profile-content>
 </div>
