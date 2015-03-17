@@ -64,6 +64,8 @@ angular.module('buildingApp')
     return {
       templateUrl: 'app/account/profile/github-tab.template.html',
       link: function(scope, element, attrs) {
+
+	scope.rankMeasualment = ['starred', 'watched', 'forked'];
 	scope.userStat = {
 	  starred: 47,
 	  watched: 80,
@@ -73,4 +75,4 @@ angular.module('buildingApp')
 	};
       }
     };
-  }) ;
+  });

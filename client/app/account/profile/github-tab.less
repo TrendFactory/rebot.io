@@ -1,9 +1,40 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800italic,800);
+@import url(http://fonts.googleapis.com/css?family=Lato:300);		
 .github-tab {
 
     font-family: 'Ubuntu', sans-serif;
-    
+
     .ranking {
-	// background-color: @rebot-pink;
+
+	h1.rankIndex {
+	    font-family: 'Open Sans', sans-serif;
+	    font-size: 100px;
+	    margin: 10px 0px 20px 0px;
+	}
+
+	h1.rankTitle {
+	    font-family: 'Lato', sans-serif;
+	}
+
+	h3 {
+	    font-family: 'Lato', sans-serif;
+	}
+
+	.rank-button {
+	    background-color: @rebot-green;
+	    border-radious: 30%;
+	    -moz-border-radius: 30%;
+	    -webkit-border-radius: 30%;
+
+	    &:not([disabled]):hover, &:not([disabled]):focus {
+		background-color: @rebot-darkgreen;
+	    }
+	    
+	}
+
+	.rank-measurement {
+	    margin: 0px 25px 0px 25px;
+	}
     }
 
     .language {
