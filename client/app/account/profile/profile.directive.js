@@ -64,7 +64,7 @@ angular.module('buildingApp')
 					       UserActivityChart) {
     return {
       templateUrl: 'app/account/profile/github-tab.template.html',
-      link: function githubLinkCtrl (scope, element, attrs) {
+      link: function (scope, element, attrs) {
 	scope.rankMeasualment = ['starred', 'watched', 'forked'];
 	scope.userStat = {
 	  starred: 47,
