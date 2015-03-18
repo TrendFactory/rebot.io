@@ -6,4 +6,7 @@ angular.module('buildingApp')
   })
   .factory('d3pie', function () {
     return d3pie;
+  })
+  .factory('_', function() {
+    return _;
   });
