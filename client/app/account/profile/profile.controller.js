@@ -7,7 +7,6 @@ angular.module('buildingApp')
     $scope.profile = {};
 
     User.get().$promise.then(function(user) {
-      console.log(user);
       $scope.profile = {
 	name: user.name,
 	email: user.email,
@@ -30,13 +29,4 @@ angular.module('buildingApp')
 	  user[p] === undefined ? false : true;
       }
     });
-
-
-    // github tab
-
-    // end github tab
-
-    // course tab
-
-    // end course tab
   });
