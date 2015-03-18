@@ -60,7 +60,8 @@ angular.module('buildingApp')
       }
     };
   })
-  .directive('rebotProfileGithubTab', function(UserLangChart) {
+  .directive('rebotProfileGithubTab', function(UserLangChart,
+					       UserActivityChart) {
     return {
       templateUrl: 'app/account/profile/github-tab.template.html',
       link: function githubLinkCtrl (scope, element, attrs) {
@@ -73,8 +74,8 @@ angular.module('buildingApp')
 	  rankIndex: 7
 	};
 
-	var id = 'langChart';
-	UserLangChart.draw(id);
+	UserLangChart.draw('lang-chart');
+	UserActivityChart.draw('activity-chart');
       }
     };
   });
