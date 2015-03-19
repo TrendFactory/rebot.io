@@ -1,13 +1,13 @@
 
-<md-grid-list class="github-tab"
+<md-grid-list class="github-grid"
 	      md-cols-sm="1" md-cols-md="2" md-cols-gt-md="4"
 	      md-row-height="4:4">
 
   <!-- Ranking card -->
   <md-grid-tile class="ranking" md-rowspan="2" md-colspan="2">
     <div layout="column" layout-align="center center" flex>
-      <h1 class="rankTitle">Trend Ranking</h1>
-      <h1 class="rankIndex"> {{ userStat.rankIndex }} </h1>
+      <p class="rank-title">Trend Ranking</p>
+      <h1 class="rank-index"> {{ userStat.rankIndex }} </h1>
       <div layout="row">
 	<div ng-repeat="m in rankMeasualment">
 	  <div class="rank-measurement" layout="column" layout-align="center center">

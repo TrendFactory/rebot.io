@@ -52,14 +52,6 @@ angular.module('buildingApp')
       }
     };
   })
-  .directive('rebotProfileCourseTab', function() {
-    return {
-      templateUrl: 'app/account/profile/course-tab.template.html',
-      link: function(scope, element, attrs) {
-	
-      }
-    };
-  })
   .directive('rebotProfileGithubTab', function(UserLangChart,
 					       UserActivityChart) {
     return {
@@ -76,6 +68,30 @@ angular.module('buildingApp')
 
 	UserLangChart.draw('lang-chart');
 	UserActivityChart.draw('activity-chart');
+      }
+    };
+  })
+  .directive('rebotProfileCourseTab', function($timeout,
+					       CourseSlideService) {
+    return {
+      templateUrl: 'app/account/profile/course-tab.template.html',
+      link: function(scope, element, attrs) {
+
+	// TODO: slick onAfterChange doesn't provide any args
+	scope.current = 1;
+	
+	$timeout(function() {
+	  scope.courses = CourseSlideService.getCourses();
+	  scope.currentTitle = scope.courses[scope.current].name;
+	}, 100);
+
+	scope.onAfterChange = function() {
+	  scope.$apply(function() {
+	    scope.current = (scope.current + 1) % scope.courses.length;
+	  });
+	};
+
+	scope.courseRank = CourseSlideService.getCourseRank();
       }
     };
   });

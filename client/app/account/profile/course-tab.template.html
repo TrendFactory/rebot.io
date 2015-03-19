@@ -1,1 +1,61 @@
-<h1>course tab</h1>
+<md-grid-list class="course-grid"
+	      md-cols-sm="2" md-cols-md="2" md-cols-gt-md="3"
+	      md-row-height-gt-md="2:3" md-row-height-sm="1:2"
+	      md-row-height-md="1:2">
+
+    <md-grid-tile class="slide-tile"
+		  md-colspan-gt-md="2" md-rowspan-gt-md="1"
+		  md-colspan-sm="2" md-colspan-md="2">
+
+	<div layout="column" layout-align="center center">
+	    <slick dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" data="courses" init-onload="false" class="" on-after-change="onAfterChange();">
+		<div ng-repeat="c in courses" align="center">
+		    <a href="{{ c.course_url }}" target="_blank">
+			<img src="{{ c.img_url  }}" />
+		    </a>
+		</div>
+	    </slick>
+	    <p class="course-university" ng-bind="courses[current].university"></p>
+	    <p class="course-name" ng-bind="courses[current].name"></p>
+	    <div layout="row" layout-align="center">
+		<md-button class="md-fab course-button course-trending"
+			   aria-label="trending" ng-show="courses[current].trending">
+		    <md-tooltip>
+			{{ courses[current].users }} / {{ courses[current].total }}
+		    </md-tooltip>
+		    <md-icon md-svg-src="assets/images/profile/trending.svg"></md-icon>
+		</md-button>
+		<md-button class="md-fab course-button course-hide"
+			   aria-label="new">
+		</md-button>
+	    </div>
+	</div>
+    </md-grid-tile>
+    
+    <md-grid-tile class="rank-tile" md-colspan="1" md-rowspan="1"
+		  md-colspan-sm="2" md-colspan-md="2">
+	<div layout="column" layout-align="center center">
+	    <p class="ac-ranking-title">Academic Ranking</p>
+	    <h1 class="ac-ranking-value" ng-bind="courseRank.rank"></h1>
+	    <div layout="row">
+		<div class="average" layout="column" layout-align="center center">
+		    <h3 class="ac-completed-title">Completed</h3>
+		    <md-button class="md-fab md-padding completed-button" aria-label="{{ m }}">
+			<md-icon md-svg-src="assets/images/profile/completed.svg"></md-icon>
+		    </md-button>
+		    <h3 class="ac-completed-value"ng-bind="courseRank.completed"></h3>
+		</div>
+		<div class="completed" layout="column" layout-align="center center">
+		    <h3 class="ac-average-title">Average</h3>
+		    <md-button class="md-fab md-padding average-button"
+			       aria-label="{{ m }}">
+			<md-tooltip> 293 users </md-tooltip>
+			<md-icon md-svg-src="assets/images/profile/average.svg"></md-icon>
+		    </md-button>
+		    <h3 class="ac-average-value" ng-bind="courseRank.average"></h3>
+		</div>
+	    </div>
+	</div>
+    </md-grid-tile>
+    
+</md-grid-list>

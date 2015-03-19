@@ -8,6 +8,14 @@
 /**
  * App-wide Styles
  */
+
+/* ng-hide spped hack */
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak],
+.ng-cloak, .x-ng-cloak,
+.ng-hide {
+    display: none !important;
+}
+
 @rebot-pink: #FF4081;
 @rebot-blue: #03A9F4;
 @rebot-yellow: #FFFF8D;
@@ -15,8 +23,15 @@
 @rebot-green: #1de9b6;
 @rebot-darkgreen: #00bfa5;
 @rebot-nav: #424A5D;
+@rebot-darknav: #323A5D;
 @rebot-orange: #FF5722;
 @rebot-lightorange: #FF3D00;
+@rebot-gray: #0f0f0f;
+
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800italic,800);
+
 
 .md-toolbar-tools {
     font-family: 'Ubuntu', sans-serif;
@@ -58,6 +73,7 @@
 
 // injector
 @import 'account/login/login.less';
+@import 'account/profile/course-tab.less';
 @import 'account/profile/github-tab.less';
 @import 'account/profile/profile.less';
 @import 'account/profile/sidebar.less';

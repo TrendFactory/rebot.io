@@ -334,4 +334,58 @@ angular.module('buildingApp')
 	content: langs
       };
     };
+  })
+  .service('CourseSlideService', function() {
+
+    // dummy
+
+    this.getCourseRank = function () {
+      return {
+	rank: 17,
+	completed: 5,
+	average:3 // user average
+      };
+    };
+    
+    this.getCourses = function() {
+      return [
+	{ name: 'Algorithm Design & Analysis',
+	  university: 'Stanford',
+	  img_url: 'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/04/530e70352d11e49571adff5b3c00f3/large-icon.png?auto=format&dpr=1&h=120',
+	  users: 89,
+	  total: 293,
+	  course_url: 'https://www.coursera.org/course/algo',
+	  description: '',
+	  trending: true},
+	{ name: 'Machine Learning',
+	  university: 'Stanford',
+	  img_url: 'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/30/d6ee30352d11e4b07f0965d0c0162f/large-icon.png?auto=format&dpr=1&h=120',
+	  users: 140,
+	  total: 293,
+	  course_url: 'https://www.coursera.org/course/ml',
+	  description: '',
+	  trending: true },
+	{ name: 'Functional Scala',
+	  university: 'EPFL',
+	  img_url: 'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/3c/cebe20352d11e49dc56df018365453/large-icon.png?auto=format&dpr=1&h=120',
+	  users: 31,
+	  total: 293,
+	  course_url: 'https://www.coursera.org/course/progfun',
+	  description: '' },
+	{ name: 'Pattern Discovery',
+	  university: 'Illnois',
+	  img_url: 'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/69/ad9dd0533711e4a596893013a50939/Data_Mining_1.jpg?auto=format&dpr=1&h=120',
+	  users: 47,
+	  total: 150,
+	  course_url: 'https://www.coursera.org/course/patterndiscovery',
+	  description: '' },
+	{ name: 'Cloud Computing 1',
+	  university: 'Illnois',
+	  img_url: 'https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://d15cw65ipctsrr.cloudfront.net/d3/cbef30549711e4a596893013a50939/cloud_computing_concepts_part_02_v03_600X340.jpg?auto=format&dpr=1&h=120',
+	  users: 15,
+	  total: 293,
+	  course_url: 'https://www.coursera.org/course/cloudcomputing',
+	  description: ''}
+      ];
+    };
   });

@@ -1,0 +1,114 @@
+.course-grid {
+
+    .slide-tile {
+	slick {
+	    width: 70%;
+	    margin-top: 30px;
+
+	    img {
+		width: 80%;
+		border-radius: 5px;
+		border: 1px;
+	    }
+
+	    .slick-prev:before,
+	    .slick-next:before {
+		color: @rebot-green;
+	    }
+	}
+
+	.course-university {
+	    padding-top: 20px;
+	    margin-top: 10px;
+	    margin-bottom: 0px;
+	    font-size: 20px;
+	    font-family: 'Lato', sans-serif;
+	    font-weight: 300;
+	    color: @rebot-gray;
+	}
+
+	.course-button {
+	    margin: 0px 5px 0px 5px;
+
+	    &.course-trending {
+		background-color: @rebot-green;
+		margin-left: 70px;
+		
+		&:not([disabled]):hover,
+		&:not([disabled]):focus {
+		    background-color: @rebot-darkgreen;
+		}
+	    }
+
+	    &.course-hide {
+		background-color: transparent;
+		box-shadow: none;
+		padding-left: 20px;
+
+		&:not([disabled]):hover,
+		&:not([disabled]):focus {
+		    background-color: transparent;
+		}
+	    }
+	}
+	
+	@media all and (min-width: 960px) {
+
+	    .course-name {
+		font-family: 'Raleway', sans-serif;
+		font-size: 30px;
+		margin-top: 0px;
+	    }
+	}
+
+	@media all and (max-width: 960px) {
+	    .course-name {
+		font-family: 'Raleway', sans-serif;
+		font-size: 25px;
+		margin-top: 0px;
+	    }
+	}
+    }
+    
+    .rank-tile {
+	background-color: @rebot-green;
+	font-family: 'Raleway', sans-serif;
+
+	.ac-ranking-title {
+	    margin: 70px 0px 0px 0px;
+	    font-size: 25px;
+	    color: @rebot-nav;
+	    font-weight: 500;
+	}
+
+	.ac-ranking-value {
+	    font-family: 'Open Sans', sans-serif;
+	    font-size: 80px;
+	    margin: 30px 0px 25px 0px;
+	    padding: 0px 0px 0px 0px;
+	    color: white;
+	}
+
+	.ac-average-value, .ac-average-title,
+	.ac-completed-value, .ac-completed-title {
+	    font-family: 'Lato', sans-serif;
+	}
+
+	.average, .completed {
+	    padding: 0px 30px 20px 30px;
+	}
+
+	.average-button, .completed-button {
+	    background-color: @rebot-nav;
+	    border-radious: 20%;
+	    -moz-border-radius: 20%;
+	    -webkit-border-radius: 20%;
+
+	    &:not([disabled]):hover, &:not([disabled]):focus {
+		background-color: @rebot-darknav;
+	    }
+	}
+    }
+
+}
+

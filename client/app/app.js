@@ -6,7 +6,8 @@ angular.module('buildingApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'ngMaterial'
+  'ngMaterial',
+  'slick'
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, $mdThemingProvider) {
     $urlRouterProvider

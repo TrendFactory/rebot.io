@@ -14,13 +14,13 @@
     </md-tab>
   </md-tabs>
   <ng-switch on="selectedTabIndex" class="tabpanel-container" flex>
-    <div role="tabpanel" id="github-tab-content" aria-labelledby="github-tab"
-	 ng-switch-when="0" md-swife-left="next()" md-swife-right="previous()" flex>
-      <rebot-profile-github-tab />
-    </div>
     <div role="tabpanel" id="course-tab-content" aria-labelledby="course-tab"
 	 ng-switch-when="1" md-swife-left="next()" md-swife-right="previous()">
       <rebot-profile-course-tab />
+    </div>
+    <div role="tabpanel" id="github-tab-content" aria-labelledby="github-tab"
+	 ng-switch-when="0" md-swife-left="next()" md-swife-right="previous()" flex>
+      <rebot-profile-github-tab />
     </div>
   </ng-switch>
 </md-content>
