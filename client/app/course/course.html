@@ -1,5 +1,78 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <h1>Course Page</h1>
+  <md-grid-list class="course-stat-grid"
+		md-cols-gt-md="4" md-cols-sm="1" md-cols-md="2"
+		md-row-height-gt-sm="5:3" md-row-height-sm="4:2" md-gutter="30px">
+    <md-grid-tile class="rank-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="rank-count">3</h1>
+	<span class="tile-text">
+	  <md-icon class="tile-icon" md-svg-src="assets/images/profile/rank.svg"></md-icon>
+	  <span>Rank</span>
+	</span>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="user-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="user-count"> 40% </h1>
+	<span class="tile-text">
+	  <md-icon class="tile-icon" md-svg-src="assets/images/profile/person.svg"></md-icon>
+	  <span>Users</span>
+	</span>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="cert-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="cert-count">276</h1>
+	<span class="tile-text">
+	  <md-icon class="tile-icon" md-svg-src="assets/images/profile/cert.svg"></md-icon>
+	  <span>Certs</span>
+	</span>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="course-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="course-count">6</h1>
+	<span class="tile-text">
+	  <md-icon class="tile-icon" md-svg-src="assets/images/profile/course.svg"></md-icon>
+	  <span>Courses</span>
+	</span>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+
+  <div class="course-repo-div md-whiteframe-z1" layout="column">
+    <md-toolbar class="search-bar" layout="row">
+      <span flex></span>
+      <md-select class="course-select" ng-model="selected">
+	<md-option value="{{ c }}" ng-repeat="c in categories"
+		   ng-selected="$index === 17">
+	  {{ c }}
+	</md-option>
+      </md-select>
+    </md-toolbar>
+    <div class="repo-list">
+      <md-list>
+	<md-item class="repo-item" ng-repeat="course in courses" layout="row">
+	  <div layout="column" layout-align="center center">
+	    <md-button class="md-fab md-padding completed-button" aria-label="completed">
+	      <md-tooltip>completed</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/person.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count">{{ course.completed }}</h3>
+	  </div>
+	  <div class="repo-desc" layout="column">
+	    <a class="repo-name" href="{{ course.url }}" target="_blank"> {{ course.name }}</a>
+	    <h3 class="repo-user"> {{ course.university }} university</h3>
+	  </div>
+	  <span flex></span>
+	  <div class="repo-last-update"layout="column">
+	    <p hide-sm>provided by</p>
+	    <span class="repo-last-update">{{ course.provider }}</span>
+	  </div>
+	</md-item>
+      </md-list>
+    </div>
+  </div>
 </div>

@@ -3,20 +3,14 @@
 angular.module('buildingApp')
   .controller('NavbarCtrl', function ($state, $scope, $location, Auth) {
     $scope.menu = [{
-      'title': 'HOME',
-      'link': '/'
+      'title': 'PEOPLE',
+      'link': '/people'
     }, {
       'title': 'LANGUAGE',
       'link': '/language'
     }, {
       'title': 'COURSE',
       'link': '/course'
-    }, {
-      'title': 'CONTRIB',
-      'link': '/contrib'
-    }, {
-      'title': 'JOB',
-      'link': '/job'
     }];
 
     $scope.isCollapsed = true;

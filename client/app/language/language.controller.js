@@ -5,9 +5,6 @@ angular.module('buildingApp')
 				       $log,
 				       LanguageService,
 				       RepoService) {
-
-    
-    
     // get languages
     $scope.langs = LanguageService.getLanguages();
     $scope.selected = $scope.langs[0];

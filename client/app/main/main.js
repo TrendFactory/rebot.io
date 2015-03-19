@@ -11,8 +11,9 @@ angular.module('buildingApp')
       url: '',
       templateUrl: 'app/main/public.html',
       controller: 'PublicCtrl'
-    }).state('main.loggedin', {
-      url: '',
+    })
+      .state('main.loggedin', {
+      url: 'people',
       templateUrl: 'app/main/loggedin.html',
       controller: 'LoggedinCtrl',
       authenticate: true

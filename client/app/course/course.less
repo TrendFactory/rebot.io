@@ -1,17 +1,26 @@
-.lang-stat-grid {
+.course-stat-grid {
 
     margin-top: 20px;
 
-    .rank-tile, .user-tile, .repo-tile {
-    	// background-color: @rebot-lightgray; //
-	background-color: #FFA000;
+    .rank-tile, .user-tile, .cert-tile, .course-tile {
+    	background-color: @rebot-orange;
     }
 
-    .rank-count, .user-count, .repo-count {
+    .rank-count, .user-count, .cert-count, .course-count {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 70px;
+	font-size: 60px;
 	margin: 10px 0px 10px 0px;
 	color: #FFFFFF;
+    }
+
+    .tile-text {
+	color: white;
+	font-size: 25px;
+	font-family: 'Raleway', sans-serif;
+    }
+
+    .tile-icon{
+	margin-bottom: 5px;
     }
 
     h2 {
@@ -22,18 +31,30 @@
     }
 }
 
-.lang-repo-div {
+.course-repo-div {
     margin-top: 20px;
     background-color: #FFFFFF;
 
     .search-bar {
-	// background-color: @rebot-blue;
-	background-color: #3D5AFE; 
+	background-color: @rebot-blue;
 
-	.lang-select {
+    }
+
+    @media all and (min-width: 600px) {
+	.course-select {
 	    margin: 20px 20px 0px 0px;
 	    padding-bottom: 15px;
 	    font-size: 25px;
+	    font-family: 'Ubuntu', sans-serif;
+
+	}
+    }
+
+    @media all and (max-width: 600px) {
+	.course-select {
+	    margin: 20px 20px 0px 0px;
+	    padding-bottom: 15px;
+	    font-size: 17px;
 	    font-family: 'Ubuntu', sans-serif;
 
 	}
@@ -113,25 +134,18 @@
 		margin-top: 7px;
 	    }
 
-	    .watch-button {
-		background-color: @rebot-green;
+	    .completed-button {
+		background-color: #00C853;
 		&:not([disabled]):hover, &:not([disabled]):focus {
-		    background-color: @rebot-darkgreen;
-		}
-	    }
-
-	    .start-button {
-		background-color: @rebot-pink;
-		&:not([disabled]):hover, &:not([disabled]):focus {
-		    background-color: @rebot-darkgreen;
+                    background-color: #2E7D32;
 		}
 	    }
 
 	    .fork-button {
 		background-color: @rebot-darkyellow;
 		&:not([disabled]):hover, &:not([disabled]):focus {
-		    background-color: @rebot-yellow;
-		}
+					     background-color: @rebot-yellow;
+					 }
 	    }
 	}
     }
