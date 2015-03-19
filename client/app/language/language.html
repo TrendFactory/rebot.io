@@ -1,5 +1,74 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 
 <div class="container">
-  <h1>Language Page</h1>
+  <md-grid-list class="lang-stat-grid"
+		md-cols-gt-sm="3" md-cols-sm="1"
+		md-row-height="3:2" md-gutter="30px">
+    <md-grid-tile class="rank-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="rank-count">{{ stat.rank }}</h1>
+	<h2>Rank</h2>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="user-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="user-count">{{ stat.userCount }}</h1>
+	<h2>Users</h2>
+      </div>
+    </md-grid-tile>
+    <md-grid-tile class="repo-tile md-whiteframe-z1" md-colspan="1" md-rowspan="1">
+      <div layout="column" layout-align="center center">
+	<h1 class="repo-count">{{ stat.repoCount }}</h1>
+	<h2>Repos</h2>
+      </div>
+    </md-grid-tile>
+  </md-grid-list>
+
+  <div class="lang-repo-div md-whiteframe-z1" layout="column">
+    <md-toolbar class="search-bar" layout="row">
+      <span flex></span>
+      <md-select class="lang-select" ng-model="selected">
+	<md-option value="{{ l }}" ng-repeat="l in langs"
+		   ng-selected="$index === 0">
+	  {{ l }}
+	</md-option>
+      </md-select>
+    </md-toolbar>
+    <div class="repo-list">
+      <md-list>
+	<md-item class="repo-item" ng-repeat="repo in repos" layout="row">
+	  <div class="watch-column" layout="column" layout-align="center center">
+	    <md-button class="md-fab md-padding watch-button " aria-label="watch">
+	      <md-tooltip>watched</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/visible.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count">{{ repo.watchers_count }}</h3>
+	  </div>
+	  <div class="star-column" layout="column" layout-align="center center">
+	    <md-button class="md-fab md-padding star-button" aria-label="star">
+	      <md-tooltip>starred</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/starred.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count">{{ repo.stargazers_count }}</h3>
+	  </div>
+	  <div class="fork-column" layout="column" layout-align="center center">
+	    <md-button class="md-fab md-padding fork-button" aria-label="fork">
+	      <md-tooltip>forked</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/forked.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count">{{ repo.forks_count }}</h3>
+	  </div>
+	  <div class="repo-desc" layout="column">
+	    <a class="repo-name" href="{{ repo.html_url }}" target="_blank"> {{ repo.name }}</a>
+	    <h3 class="repo-user"> {{ repo.user }}</h3>
+	  </div>
+	  <span flex></span>
+	  <div class="repo-last-update"layout="column">
+	    <p>Last update</p>
+	    <span hide-sm class="repo-last-update">{{ repo.last_update }}</span>
+	  </div>
+	</md-item>
+      </md-list>
+    </div>
+  </div>
 </div>

@@ -83,7 +83,7 @@ angular.module('buildingApp')
 	$timeout(function() {
 	  scope.courses = CourseSlideService.getCourses();
 	  scope.currentTitle = scope.courses[scope.current].name;
-	}, 100);
+	}, 500);
 
 	scope.onAfterChange = function() {
 	  scope.$apply(function() {

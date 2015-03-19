@@ -1,0 +1,146 @@
+
+.lang-stat-grid {
+
+    margin-top: 20px;
+
+    .rank-tile, .user-tile, .repo-tile {
+    	background-color: @rebot-lightgray;
+    }
+
+    .rank-count, .user-count, .repo-count {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 70px;
+	margin: 10px 0px 10px 0px;
+	color: #FFFFFF;
+    }
+
+    h2 {
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+	color: #FFFFFF;
+	margin: 10px 0px 0px 0px;
+    }
+}
+
+.lang-repo-div {
+    margin-top: 20px;
+    background-color: #FFFFFF;
+
+    .search-bar {
+	background-color: @rebot-blue;
+
+	.lang-select {
+	    margin: 20px 20px 0px 0px;
+	    padding-bottom: 15px;
+	    font-size: 25px;
+	    font-family: 'Ubuntu', sans-serif;
+
+	}
+    }
+
+    .repo-list {
+	.repo-item {
+	    border-top: 1px solid;
+	    border-top-color: rgba(0,0,0,0.12);
+	    padding: 10px 20px 10px 20px;
+
+	    @media all and (max-width: 600px) {
+		.md-fab {
+		    margin: 10px 5px 0px 5px;
+		    border-radius: 30%;
+		    height: 35px;
+		    width: 35px;
+		}
+
+		.repo-desc {
+		    margin-left: 20px;
+		    margin-top: 10px;
+		}
+
+		.repo-name {
+		    font-size: 20px;
+		    font-family: 'Open sans', sans-serif;
+		}
+
+		.repo-user {
+		    font-family: 'Ubuntu', sans-serif;
+		    font-size: 15px;
+		}
+	    }
+	    
+	    @media all and (min-width: 600px) {
+		.md-fab {
+		    margin: 10px 10px 0px 10px;
+		    border-radius: 30%;
+		    height: 45px;
+		    width: 45px;
+		}
+
+		.repo-desc {
+		    margin-left: 20px;
+		    margin-top: 10px;
+		}
+
+		.repo-name {
+		    font-size: 25px;
+		    font-family: 'Open sans', sans-serif;
+		}
+
+		.repo-user {
+		    font-family: 'Ubuntu', sans-serif;
+		    font-size: 15px;
+		}
+
+		.repo-last-update {
+		    p {
+			font-family: 'Ubuntu', sans-serif;
+			font-size: 15px;
+			margin-top: 10px;
+			margin-bottom: 0px;
+		    }
+		    span {
+			padding-top: 10px;
+			font-size: 20px;
+			font-family: 'Lato', sans-serif;
+		    }
+		}
+	    }
+
+	    h3.count {
+		font-family: 'Ubuntu', sans-serif;
+		margin-bottom: 0px;
+		margin-top: 7px;
+	    }
+
+	    .watch-button {
+		background-color: @rebot-green;
+		&:not([disabled]):hover, &:not([disabled]):focus {
+		    background-color: @rebot-darkgreen;
+		}
+	    }
+
+	    .start-button {
+		background-color: @rebot-pink;
+		&:not([disabled]):hover, &:not([disabled]):focus {
+		    background-color: @rebot-darkgreen;
+		}
+	    }
+
+	    .fork-button {
+		background-color: @rebot-darkyellow;
+		&:not([disabled]):hover, &:not([disabled]):focus {
+		    background-color: @rebot-yellow;
+		}
+	    }
+	}
+    }
+}
+
+md-select.md-default-theme .md-select-label {
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+}
+
+md-select.md-default-theme:not([disabled]):focus .md-select-label {
+    border-bottom-color: rgba(255, 255, 255, 0.6);
+    color: #FFFFFF;
+}
