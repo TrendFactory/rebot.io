@@ -9,7 +9,11 @@ var router = express.Router();
 router.get('/:lang', function(req, res) {
   var lang = req.params.lang;
 
-  Repo.find({language: req.params.lang}).limit(30).exec(function(err, repos) {
+  Repo
+    .find({language: req.params.lang})
+    .sort({estimation: -1})
+    .limit(30)
+    .exec(function(err, repos) {
     
     if(err) {
       console.log(err);
