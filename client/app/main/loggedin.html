@@ -1,86 +1,51 @@
 <div class="container">
-  <md-grid-list md-cols-sm="2" md-cols-gt-sm="6"
-		md-row-height-sm="3:2" md-row-height-gt-md="3:2"
-		md-gutter="10px" md-gutter-gt-sm="45px">
-
-    <md-grid-tile md-rowspan="2" md-colspan="2">
-      <md-card id="#language1" class="language1-card" layout="column" layout-fill>
-	<md-toolbar class="md-primary">
-	  <div class="md-toolbar-tools"> <h3>Ranking 1</h3> </div>
-	</md-toolbar>
-	<md-content flex>
-	  
-	</md-content>
-      </md-card>
-    </md-grid-tile>
-
-    <md-grid-tile md-rowspan="2" md-colspan="2">
-      <md-card id="#language-trend" class="language-trend-card" layout="column" layout-fill>
-	<md-toolbar class="md-primary md-hue-1">
-	  <div class="md-toolbar-tools"> <h3>Fans</h3> </div>
-	</md-toolbar>
-	<md-content flex>
-	  
-	</md-content>
-      </md-card>
-    </md-grid-tile>
-    
-    <md-grid-tile md-rowspan="6" md-colspan="2" layout="column" layout-wrap >
-      <md-content id="#leader" class="leader-card md-whiteframe-z1" flex>
-	<md-toolbar class="md-accent">
-	  <div class="md-toolbar-tools">
-	    <h3>Trend Leaders</h3>
+  <div class="trend-leader-div md-whiteframe-z1" layout="column">
+    <md-toolbar class="search-bar" layout="row">
+      <span class="toolbar-title">Trend Leaders</span>
+      <span flex></span>
+      <md-select class="course-select" ng-model="selected">
+	<md-option value="{{ l }}" ng-repeat="l in langs"
+		   ng-selected="$index === 1">
+	  {{ l }}
+	</md-option>
+      </md-select>
+    </md-toolbar>
+    <div class="repo-list">
+      <md-list>
+	<md-item class="repo-item" ng-repeat="person in people" layout="row">
+	  <div layout="column" layout-align="center center">
+	    <img src="{{ person.avatarUrl }}" class="avatar md-whiteframe-z1" />
+	    <h3 class="count">{{ person.ranking }}</h3>
 	  </div>
-	</md-toolbar>
-	<md-content flex>
-	  <md-list>
-	    <md-item ng-repeat="l in leaders">
-	      <md-item-content>
-		<div class="md-tile-left">
-		  <img alt="" src="{{ l.avatarUrl }}" class="avatar"/>
-		</div>
-		<div class="mg-tile-content">
-		  <h3>{{ l.name }}</h3>
-		  <h4>Scala</h4>
-		</div>
-	      </md-item-content>
-	      <md-divider inset></md-divider>
-	    </md-item>
-	  </md-list>
-	</md-content>
-    </md-grid-tile>
-    
-    <md-grid-tile md-rowspan="2" md-colspan="2">
-      <md-card id="#language2" class="language2-card" layout="column" layout-fill>
-	<md-toolbar class="md-primary">
-	  <div class="md-toolbar-tools"> <h3>Ranking 2</h3> </div>
-	</md-toolbar>
-	<md-content flex>
+	  <div class="repo-desc" layout="column">
+	    <a class="repo-name" href="{{ person.profileUrl }}"> {{ person.name }}</a>
+	  </div>
+	  <span flex></span>
+	  <div layout="column" layout-align="center center">
+	    <md-button class="md-fab md-padding active-button" aria-label="active">
+	      <md-tooltip>active</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/active.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count">{{ person.active }}</h3>
+	  </div>
+	  <div layout="column" layout-align="center center">
+	    <md-button class="md-fab md-padding influential-button" aria-label="influential">
+	      <md-tooltip>influential</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/influential.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count">{{ person.influential }}</h3>
+	  </div>
 	  
-	</md-content>
-      </md-card>
-    </md-grid-tile>
-
-    <md-grid-tile md-rowspan="4" md-colspan="2">
-      <md-card id="#recommend" class="recommend-card" layout="column" layout-fill>
-	<md-toolbar class="md-warn">
-	  <div class="md-toolbar-tools"> <h3>Questions</h3> </div>
-	</md-toolbar>
-	<md-content flex>
+	  <div layout="column" layout-align="center center">
+	    <md-button ng-click="goGithub(person.githubUrl)" class="md-fab md-padding github-button" aria-label="github">
+	      <md-tooltip>github</md-tooltip>
+	      <md-icon md-svg-src="assets/images/profile/github.svg"></md-icon>
+	    </md-button>
+	    <h3 class="count"> git </h3>
+	  </div>
 	  
-	</md-content>
-      </md-card>
-    </md-grid-tile>
-
-    <md-grid-tile md-rowspan="2" md-colspan="2">
-      <md-card id="#course" class="course-card" layout="column" layout-fill>
-	<md-toolbar class="md-primary">
-	  <div class="md-toolbar-tools"> <h3>Active Course</h3> </div>
-	</md-toolbar>
-	<md-content flex>
-	  
-	</md-content>
-      </md-card>
-    </md-grid-tile>
-  </md-grid-list>
+	</md-item>
+      </md-list>
+    </div>
+  </div>
 </div>
