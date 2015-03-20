@@ -7,7 +7,7 @@
 		  md-colspan-gt-md="2" md-rowspan-gt-md="1"
 		  md-colspan-sm="2" md-colspan-md="2">
 
-	<div layout="column" layout-align="center center">
+	<div layout="column" layout-align="center center" ng-show="linkedinConnected">
 	    <slick dots="true" infinite="true" speed="300" slides-to-show="3" touch-move="false" slides-to-scroll="1" data="courses" init-onload="false" class="" on-after-change="onAfterChange();">
 		<div ng-repeat="c in courses" align="center">
 		    <a href="{{ c.course_url }}" target="_blank">
@@ -31,9 +31,9 @@
 	    </div>
 	</div>
     </md-grid-tile>
-    
+
     <md-grid-tile class="rank-tile" md-colspan="1" md-rowspan="1"
-		  md-colspan-sm="2" md-colspan-md="2">
+		  md-colspan-sm="2" md-colspan-md="2" ng-show="linkedinConnected">
 	<div layout="column" layout-align="center center">
 	    <p class="ac-ranking-title">Academic Ranking</p>
 	    <h1 class="ac-ranking-value" ng-bind="courseRank.rank"></h1>

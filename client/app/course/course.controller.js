@@ -11,5 +11,4 @@ angular.module('buildingApp')
     $scope.categories = CourseService.getCategory();
     $scope.selected = undefined;
     $scope.courses = CourseService.getCourse();
-    
   });

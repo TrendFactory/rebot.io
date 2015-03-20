@@ -36,10 +36,14 @@ angular.module('buildingApp')
       }
     };
   })
-  .directive('rebotProfileContent', function() {
+  .directive('rebotProfileContent', function(Auth) {
     return {
       templateUrl: 'app/account/profile/tabs.template.html',
       link: function(scope, element, attrs) {
+
+	// for linkedin connection demo
+	scope.linkedinConnected = false;
+	
 	scope.selectedTabIndex = 0;
 	scope.maxTabCount = 2;
 	scope.next = function() {
@@ -72,11 +76,20 @@ angular.module('buildingApp')
     };
   })
   .directive('rebotProfileCourseTab', function($timeout,
+					       User,
 					       CourseSlideService) {
     return {
       templateUrl: 'app/account/profile/course-tab.template.html',
       link: function(scope, element, attrs) {
 
+	scope.linkedinConnected = false;
+
+	User.get().$promise.then(function(user) {
+	  if (user.linkedin) 
+	    scope.linkedinConnected = true;
+	});
+
+	  
 	// TODO: slick onAfterChange doesn't provide any args
 	scope.current = 1;
 	
