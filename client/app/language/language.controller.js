@@ -22,7 +22,11 @@ angular.module('buildingApp')
       $scope.stat.forkCount = stat.forks_count;
 
       // RepoService
-      $scope.repos = RepoService.getRepos($scope.lang);
+      // $scope.repos = RepoService.getRepos($scope.lang);
+      var Repos = RepoService.Repos;
+      Repos.query({language: $scope.selected}, function(repos) {
+	  $scope.repos = RepoService.parseRepo(repos);
+      });
     });
 
   });
