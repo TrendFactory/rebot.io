@@ -36,7 +36,7 @@ angular.module('buildingApp')
       { ranking: "05",
 	avatarUrl: "https://avatars0.githubusercontent.com/u/4968473?v=3&s=192",
 	githubUrl: "https://github.com/1ambda",
-	profileUrl: "/profile/1ambda",
+	profileUrl: "/profile",
 	name: "1ambda",
 	active: 47,
 	influential: 7 
