@@ -5,7 +5,10 @@
 ### Development
 
 ```
+$ npm install -g bower grunt-cli
 $ npm install && bower install
 $ grunt init # execute only once to copy config files 
+$ # configure local.env.js
+$ # configure development.js
 $ grunt serve
 ```
